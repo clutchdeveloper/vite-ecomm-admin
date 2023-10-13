@@ -32,7 +32,7 @@ function Orders() {
   return (
     <div>
       <h3 className="mb-4">Orders</h3>
-      <div>
+      <div className="shadow-md bg-white rounded-sm">
         <Table columns={columns} dataSource={data1} />
       </div>
     </div>

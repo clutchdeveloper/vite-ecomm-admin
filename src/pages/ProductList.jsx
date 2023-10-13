@@ -1,5 +1,6 @@
 import { Table } from "antd";
-
+import { AiFillDelete } from "react-icons/ai";
+import { BiEdit } from "react-icons/bi";
 const columns = [
   {
     title: "S/N",

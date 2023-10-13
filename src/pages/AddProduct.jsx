@@ -1,7 +1,5 @@
-import CustomInput from "../components/CustomInput";
+import React, { useState } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import { useState } from "react";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
 
@@ -26,16 +24,29 @@ const props = {
   },
 };
 
-function Addblog() {
+function AddProduct() {
   const [desc, setDesc] = useState();
 
   const handleDesc = (e) => {};
+
   return (
     <div>
-      <h3 className="mb-4">Add Blog</h3>
+      <h3>Add Product</h3>
+      <div>
+        <form className="flex flex-col space-y-4">
+          <input type="text" placeholder="Enter Product Title" />
+          <ReactQuill theme="snow" value={desc} onChange={(e) => setDesc(e.target.value)} />
 
-      <div className="bg-white p-2 rounded-sm shadow-md">
-        <form>
+          <input type="number" placeholder="" />
+          <select name="" className="">
+            <option value="">Select Brand</option>
+          </select>
+          <select name="" className="">
+            <option value="">Select Category</option>
+          </select>
+          <select name="" className="">
+            <option value="">Select Color</option>
+          </select>
           <Dragger {...props}>
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
@@ -43,16 +54,8 @@ function Addblog() {
             <p className="ant-upload-text">Click or drag file to this area to upload</p>
             <p className="ant-upload-hint">Support for a single or bulk upload. Strictly prohibited from uploading company data or other banned files.</p>
           </Dragger>
-          <div className="mt-3">
-            <h3>Enter Blog title</h3>
-          </div>
-          <CustomInput type="text" />
-          <select name="" id="">
-            <option value="">Select Blog Category</option>
-          </select>
-          <ReactQuill theme="snow" value={desc} onChange={(e) => setDesc(e.target.value)} />
           <button type="submit" className="px-4 py-2 mt-10 bg-green-600 text-white text-sm rounded-sm font-semibold">
-            Add blog
+            Add Product
           </button>
         </form>
       </div>
@@ -60,4 +63,4 @@ function Addblog() {
   );
 }
 
-export default Addblog;
+export default AddProduct;

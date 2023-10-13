@@ -1,6 +1,6 @@
 import React from "react";
 import { BsArrowDownRight, BsArrowUpRight } from "react-icons/bs";
-import { Column } from "@ant-design/plots";
+// import { Column } from "@ant-design/plots";
 import {  Table } from "antd";
 
 const columns = [
@@ -87,7 +87,7 @@ function Dashboard() {
       xField: "type",
       yField: "sales",
       color: ({ type }) => {
-        return "#ffd333";
+        return "#ffd331";
       },
       label: {
         position: "middle",
@@ -113,9 +113,9 @@ function Dashboard() {
     };
   return (
     <div>
-      <h3 className="mb-4">Dashboard</h3>
+      <h3 className="mb-4 font-semibold text-lg">Statistics</h3>
       <div className="md:flex justify-between items-center md:space-x-3 grid grid-cols-1 gap-3">
-        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-3">
+        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-sm">
           <div>
             <p className="">Total</p>
             <h4 className="mb-0">$1100</h4>
@@ -128,7 +128,7 @@ function Dashboard() {
             <p className="mb-0">Compared To April 2022</p>
           </div>
         </div>
-        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-3">
+        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-sm">
           <div>
             <p className="">Total</p>
             <h4 className="mb-0">$1100</h4>
@@ -141,7 +141,7 @@ function Dashboard() {
             <p className="mb-0">Compared To April 2022</p>
           </div>
         </div>
-        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-3">
+        <div className="flex border-l-2 border-purple-400 shadow-md justify-between items-end flex-1 bg-white p-3 rounded-sm">
           <div>
             <p className="">Total</p>
             <h4 className="mb-0">$1100</h4>
@@ -157,13 +157,13 @@ function Dashboard() {
       </div>
       <div className="mt-4">
         <h3 className="mb-4">Income Statistics</h3>
-        <div>
-          <Column {...config} />
+        <div className="bg-white shadow-md rounded-sm p-4">
+          {/* <Column {...config} /> */}
         </div>
       </div>
       <div className="mt-4">
         <h3 className="mb-4">Recent Orders</h3>
-        <div>
+        <div className="bg-white shadow-md rounded-sm">
           <Table columns={columns} dataSource={data1} />
         </div>
       </div>
